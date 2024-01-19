@@ -1,0 +1,50 @@
+<style type="text/css" media="all">
+  header {
+    width : 100%;
+    background: var(--text-high);
+    border-bottom : .1em solid var(--text-low);
+
+    position: absolute;
+    top : 0;
+    left : 0;
+    z-index: 100;
+  }
+  .header-cont {
+    background : transparent;
+    backdrop-filter: blur(2px);
+    width : 100%;
+    padding : .5em 1em;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap : 1em;
+  }
+  .header-cont i {
+    color : var(--gray-light);
+  }
+  .logo {
+    color : var(--white);
+    font-size: 1rem;
+    text-decoration: none;
+
+    display : grid;
+    grid-template-columns : 1;
+    place-items : center;
+  }
+  .logo img {
+    width : 2.5em;
+  }
+</style>
+<header>
+  <div class="header-cont stiff">
+    <a href="/" class="back-btn"><i class="bi-chevron-left"></i></a>
+    <a href='/' class="logo"> <img src="/static/kcpd_logo_192.png" alt="kcdp logo"></a>
+    <a href="/" style="visibility: hidden;"><i class="bi-chevron-left"></i></a>
+  </div>
+</header>
+<script>
+    if ( window.location.pathname == '/' ){
+        document.querySelector('.back-btn').style.visibility = 'hidden';
+    }
+</script>

@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block content %}
+
+  <style>
+    .atf-bowl {
+      width : 100%;
+      background : var(--text-high);
+    }
+    .atf-cont {
+      width : 100%;
+    }
+    .atf-center {
+      text-align: center;
+      padding : 7em 1em 4em 1em;
+
+      display: grid;
+      grid-template-columns: 1fr;
+      place-items: center;
+      grid-gap: 1em;
+    }
+    .atf-center h1 {
+      line-height : 1.25em;
+      color : var(--white);
+    }
+    .atf-center p {
+      line-height: 2em;
+      color : var(--gray-light);
+    }
+    .cta {
+      width : 100%;
+      padding : 1em 0 0 0;
+      margin-bottom: -7.5em;
+      box-shadow : 0 .5em .5em -.25em var(--gray-dark);
+
+      display: grid;
+      grid-template-columns: .7fr .3fr;
+    }
+    .cta * {
+      width : 100%;
+      font-size: 1rem;
+      padding : 1em;
+      color : var(--base-five);
+      font-family: inherit;
+      border : .1em solid var(--gray-dark);
+      outline: none;
+    }
+    .cta button {
+      font-weight: bold;
+      transition : .2s;
+    }
+    .cta button:hover {
+        background : var(--white);
+    }
+  </style>
+  <div class="atf-bowl">
+    <div class="atf-cont stiff">
+      <div class="atf-center">
+        <h1>For those who value clarity</h1>
+        <p>Stream High-Quality Telugu Movies Anytime, Anywhere with KCPD.<br> Works seamlessly across all devices. </p>
+        <form class="cta" action="/search/" method="GET"> {% csrf_token %}
+          <input type="text" name="query" id="query" value="" placeholder="Search for movies and more ..." required/>
+          <button type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  {% include "sresults.html" %}
+
+{% endblock %}

@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block content %}
+
+  
+<style>
+    .movie-bowl {
+      width : 100%;
+      padding : 6em 0 2em 0;
+    }
+    .movie-cont {
+      width : 100%;
+      padding: 0 1em;
+      
+      display: grid;
+      grid-template-columns: 1fr;
+      place-items: center start;
+      grid-gap: 1em;
+    }
+    .movie-cont h2 {
+      
+    }
+    .movie-box {
+      width : 100%;
+    }
+    .movie-box2 {
+      width : 100%;
+      
+      display: grid;
+      grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
+      grid-gap: 1.25em 1em;
+      place-items: start;
+    }
+    .movie-block {
+      width : 100%;
+      text-decoration: none;
+      color : var(--text-med);
+    }
+    .movie-block .movie-poster {
+      border-radius: .15em;
+      aspect-ratio: 1/1.24;
+    }
+    .movie-desc {
+      width : 100%;
+      padding : .35em 0;
+      color : var(--base-five);
+      font-family: Sans-Serif;
+      
+      display: grid;
+      grid-template-columns: auto 2.75rem;
+      place-items: center start;
+      grid-gap: .75em;
+    }
+    .movie-desc b{
+      width : 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-weight: 400;
+    }
+    .movie-desc p i{
+      color : var(--base-one);
+    }
+    
+  </style>
+  <div class="movie-bowl">
+    <div class="movie-cont stiff">
+      <h2 class="tagname">Movies</h2>
+      <div class="movie-box">
+        <div class="movie-box2">
+          {% for f in films %}
+            <a class="movie-block" href="/movie/{{ f.title }}">
+              <img class="movie-poster" src="{{ f.image }}" alt="movie name" />
+              <div class="movie-desc">
+                <b>{{ f.title }}</b>
+                <p>{{ f.rating }} <i class="bi-star-fill"></i></p>
+              </div>
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0">
+    <meta name="google-site-verification" content="oevM4pLBZYtVbL3C19lM9d9XNbPJ2T0FEmSF88sBrv0" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X58PBN191T"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-X58PBN191T');
+    </script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="icon" type="image/png" sizes="192x192" href="/static/kcpd_logo_192.png">
+
+    <meta property="og:site_name" content="kcpd movies">
+    <meta name="twitter:card" content="summary">
+
+    <meta property="og:image" content="{{ film.image }}"/>
+    <meta property="twitter:image" content="{{ film.image }}"/>
+
+    {% if film %}
+        <title>Watch / Download {{ film.title }} for free at 1080p.</title>
+        <meta name="og:title" content="Watch / Download {{ film.title }} for free at 1080p.">
+        <meta name="twitter:title" content="Watch / Download {{ film.title }} for free at 1080p.">
+    {% else %}
+        <title>Stream High-Quality Telugu Movies Anytime, Anywhere for free.</title>
+        <meta name="og:title" content="Stream High-Quality Telugu Movies Anytime, Anywhere for free.">
+        <meta name="twitter:title" content="Stream High-Quality Telugu Movies Anytime, Anywhere for free.">
+    {% endif %}
+
+    <meta name="description" content="You can watch and download free high quality movies 🎥 at KCPD 💥. We constantly add latest movies with a minimum resolution of 720p just for you 💙.">
+    <meta name="og:description" content="You can watch and download free high quality movies 🎥 at KCPD 💥. We constantly add latest movies with a minimum resolution of 720p just for you 💙.">
+    <meta name="twitter:description" content="You can watch and download free high quality movies 🎥 at KCPD 💥. We constantly add latest movies with a minimum resolution of 720p just for you 💙.">
+
+    <style type="text/css" media="all">
+       :root {
+         --text-high : #121212;
+         --text-med : #242424;
+         --text-low : #505050;
+
+         --white : #fafafa;
+         --gray-light : #eee;
+         --gray-dark : #ddd;
+
+         --base-one : #ee453f;
+
+       }
+      * {
+        box-sizing: border-box;
+        margin : 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: clamp(1.65em,4vw,3em);
+      }
+      html {
+        scroll-behavior: smooth;
+        font-size: 16px;
+      }
+      img {
+        width : 100%;
+      }
+      a {
+
+      }
+      body {
+        width : 100vw;
+        background : #fff;
+        font-family: "Inter",Sans-Serif;
+        overflow-x: hidden;
+      }
+      .stiff {
+        max-width:1000px;
+        margin : 0 auto;
+      }
+    </style>
+
+  </head>
+  <body>
+
+    {% include "header.html" %}
+
+    <div id="wrap">
+      {% block content %}
+      {% endblock %}
+    </div>
+
+
+  </body>
+</html>
